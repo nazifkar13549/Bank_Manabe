@@ -17,7 +17,7 @@ jobs:
       - name: Accept licenses
         run: yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses || true
       - name: Unzip project
-        run: unzip -q BankManabe.zip
+        run:  unzip -q -o "$(ls DOC-* Bank*.zip 2>/dev/null | head -n 1)"
       - name: Build
         working-directory: BankManabe
         run: gradle assembleDebug --no-daemon
